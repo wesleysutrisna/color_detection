@@ -39,13 +39,6 @@ class _ColorPickerWidgetState extends State<ColorPickerWidget> {
   final StreamController<Color> _stateController = StreamController<Color>();
   late img.Image photo;
 
-  List<Color> colorOption = [
-    Colors.green,
-    Colors.red,
-    Colors.blue,
-    Colors.yellow
-  ];
-
   @override
   void initState() {
     currentKey = useSnapshot ? paintKey : imageKey;
@@ -107,29 +100,6 @@ class _ColorPickerWidgetState extends State<ColorPickerWidget> {
                                 fontSize: 16,
                                 color: Colors.white,
                                 backgroundColor: Colors.black54))),
-                    Container(
-                      margin: const EdgeInsets.fromLTRB(28, 10, 0, 0),
-                      child: Row(
-                        children: [
-                          for (Color color in colorOption)
-                            Container(
-                              margin: const EdgeInsets.fromLTRB(10, 10, 10, 10),
-                              width: 50,
-                              height: 50,
-                              decoration: BoxDecoration(
-                                  color: color,
-                                  border: Border.all(
-                                      width: 2.0, color: Colors.white),
-                                  boxShadow: const [
-                                    BoxShadow(
-                                        color: Colors.black12,
-                                        blurRadius: 4,
-                                        offset: Offset(0, 2))
-                                  ]),
-                            )
-                        ],
-                      ),
-                    )
                   ]);
                 }),
             ElevatedButton(
